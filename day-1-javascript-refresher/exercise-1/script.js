@@ -1,27 +1,5 @@
 // ------------------------------ level 1 -------------------------
-const countries = [
-  'Albania',
-  'Bolivia',
-  'Canada',
-  'Denmark',
-  'Ethiopia',
-  'Finland',
-  'Germany',
-  'Hungary',
-  'Ireland',
-  'Japan',
-  'Kenya',
-]
 
-const webTechs = [
-  'HTML',
-  'CSS',
-  'JavaScript',
-  'React',
-  'Redux',
-  'Node',
-  'MongoDB',
-];
 
 // 1. Declare an empty array;
     console.log(`1. Declare an empty array;`);
@@ -175,3 +153,54 @@ const webTechs = [
 // 23. Remove all IT companies
     console.log(`23. Remove all IT companies`);
     console.log(itCompanies.splice());
+    console.log(`\n`);
+
+// ------------------------------ end level 1 -------------------------
+
+// ------------------------------ level 2 -------------------------
+
+// 2. First remove all the punctuations and change the string to array and count the number of words in the array
+    console.log(`2. First remove all the punctuations and change the string to array and count the number of words in the array`);
+    let text ='I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.';
+    const result = (text.replace(/[.,$]/gm , '')).split(' ');
+    console.log(result);
+    console.log(`total words: ${result.length}`);
+    console.log(`\n`);
+
+// 3. In the following shopping cart add, remove, edit items
+    console.log(`In the following shopping cart add, remove, edit items`);
+    const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
+
+    console.log(`i. add 'Meat' in the beginning of your shopping cart if it has not been already added`);
+    if(shoppingCart.indexOf('Meat') == -1){
+      shoppingCart.unshift('Meat');
+      console.log(shoppingCart);
+    }else{
+      console.log(shoppingCart)
+    }
+    console.log(`\n`);
+
+    console.log(`ii. add Sugar at the end of you shopping cart if it has not been already added`);
+    if(shoppingCart.indexOf('Sugar') == -1){
+      shoppingCart.push('Sugar');
+      console.log(shoppingCart);
+    }else{
+      console.log(shoppingCart);
+    }
+    console.log(`\n`);
+
+    console.log(`iii. remove 'Honey' if you are allergic to honey`);
+    if(shoppingCart.indexOf('Honey') > -1){
+      shoppingCart.splice(shoppingCart.indexOf('Honey'),1);
+      console.log(shoppingCart);
+    }else{
+      console.log(shoppingCart);
+    }
+    console.log(`\n`);
+
+    console.log(`iv. modify Tea to 'Green Tea'`);
+    if(shoppingCart.indexOf('Tea') > -1){
+      shoppingCart[shoppingCart.indexOf('Tea')] = 'Green Tea';
+    };
+    console.log(shoppingCart);
+    console.log(`\n`);
