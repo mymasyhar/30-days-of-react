@@ -1,6 +1,4 @@
 // ------------------------------ level 1 -------------------------
-
-
 // 1. Declare an empty array;
     console.log(`1. Declare an empty array;`);
     const newArray = [];
@@ -180,6 +178,7 @@
     }
     console.log(`\n`);
 
+    //ii. add Sugar at the end of you shopping cart if it has not been already added
     console.log(`ii. add Sugar at the end of you shopping cart if it has not been already added`);
     if(shoppingCart.indexOf('Sugar') == -1){
       shoppingCart.push('Sugar');
@@ -189,6 +188,7 @@
     }
     console.log(`\n`);
 
+    //iii. remove 'Honey' if you are allergic to honey
     console.log(`iii. remove 'Honey' if you are allergic to honey`);
     if(shoppingCart.indexOf('Honey') > -1){
       shoppingCart.splice(shoppingCart.indexOf('Honey'),1);
@@ -198,9 +198,67 @@
     }
     console.log(`\n`);
 
+    //iv. modify Tea to 'Green Tea'
     console.log(`iv. modify Tea to 'Green Tea'`);
     if(shoppingCart.indexOf('Tea') > -1){
       shoppingCart[shoppingCart.indexOf('Tea')] = 'Green Tea';
     };
     console.log(shoppingCart);
     console.log(`\n`);
+
+// 4. In countries array check if 'Ethiopia' exists in the array if it exists print 'ETHIOPIA'. If it does not exist add to the countries list.
+    console.log(`answer is on countries.js script`);
+    console.log(`\n`);
+
+// 5. In the webTechs array check if Sass exists in the array and if it exists print 'Sass is a CSS preprocess'. If it does not exist add Sass to the array and print the array.
+    console.log(`answer is on webTechs.js script`);
+    console.log(`\n`);
+
+// 6. Concatenate the following two variables and store it in a fullStack variable.
+    console.log(`6. Concatenate the following two variables and store it in a fullStack variable.`);
+    const frontEnd = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+    const backEnd = ['Node', 'Express', 'MongoDB']
+    const fullStack = frontEnd.concat(backEnd)
+    console.log(fullStack);
+    console.log(`\n`);
+
+// ------------------------------ end level 2 -------------------------
+
+// ------------------------------ level 3 -------------------------
+// 1. The following is an array of 10 students ages: js const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]  - Sort the array and find the min and max age - Find the median age(one middle item or two middle items divided by two) - Find the average age(all items divided by number of items) - Find the range of the ages(max minus min) - Compare the value of (min - average) and (max - average), use abs() method
+    console.log(`1. The following is an array of 10 students ages: js const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]`);
+    const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
+    console.log(`\n`);
+
+    // - Sort the array and find the min and max age
+    console.log(`- Sort the array and find the min and max age`);
+    console.log(`min age: ${ages.sort()[0]}\nmax age: ${ages.sort()[ages.length-1]}`);
+    console.log(`\n`);
+
+    // - Find the median age(one middle item or two middle items divided by two) 
+    console.log(`- Find the median age(one middle item or two middle items divided by two) `);
+    console.log(ages.sort());
+    console.log(`median: ${ages.sort().slice(ages.length/2-1, ages.length/2+1)}`);
+    console.log(`\n`);
+
+    // - Find the average age(all items divided by number of items) 
+    console.log(`- Find the average age(all items divided by number of items)`);
+    const average = ages.reduce((a,b) => (a + b), 0)/ages.length;
+    console.log(`average: ${average}`);
+    console.log(`\n`);
+
+    // - Find the range of the ages(max minus min)
+    console.log(`- Find the range of the ages(max minus min)`);
+    const max = ages.sort()[ages.length-1];
+    const min = ages.sort()[0]
+    console.log(`range: ${max - min}`);
+    console.log(`\n`);
+
+    // - Compare the value of (min - average) and (max - average), use abs() method
+    console.log(`- Compare the value of (min - average) and (max - average), use abs() method`);
+    console.log(`min - average: ${Math.abs(min-average).toFixed(2)}\nmax - average: ${Math.abs(max-average).toFixed(2)}`);
+    console.log(`\n`);
+
+
+// ------------------------------ end level 3 -------------------------
+
