@@ -29,6 +29,10 @@
         email: 'masyhar@example.com',
         phone: '+6212345678'
       }
+      const author = {
+        name: 'Asabeneh',
+        challengeInfo: '30 Days of React',
+      }
 
       const headerStyling = {
         padding: 25,
@@ -67,6 +71,17 @@
         </main>
       );
       
+      const sectionStyling = {
+        textAlign: 'center',
+        margin: '12% auto',
+      }
+      
+      const section = (
+        <section style={sectionStyling}>
+          <h2>challenge info : {author.challengeInfo} from {author.name}</h2>
+        </section>
+      )
+      
       // 2. Create a style object for the footer and app JSX
       const footerStyling = {
         position: 'absolute',
@@ -93,6 +108,7 @@
         <div style={appStyling}>
           {header}
           {main}
+          {section}
           {footer}
         </div>
       );

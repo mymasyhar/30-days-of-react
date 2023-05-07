@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 const subscriptions = {
   title: 'subscription',
   info: 'Sign up with your email address to receive news and updates.',
-  inputPlaceholder: ['First name', 'Last name', 'email'],
+  inputPlaceholder: ['First name', 'Last name', 'Email'],
   buttonPlaceholder: 'subscribe'
 }
 

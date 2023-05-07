@@ -184,3 +184,13 @@ const users = {
     const userValues = Object.values(newUserList);
     console.log(userValues);
     console.log(`\n`);
+
+// 7. Use the countries object to print a country name, capital, populations and languages. // answer is on countries.js script
+    console.log(`7. Use the countries object to print a country name, capital, populations and languages.`);
+    console.log(`\n`);
+
+// ------------------------------ end level 2 -------------------------
+
+// ------------------------------ level 3 -------------------------
+
+// 1. 
