@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 
 const ColorPallete = () => {
   const colorList = [];
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 5; i++) {
     const characters = "1234567890ABCDEF";
     let color = "#";
     for (let j = 0; j < 6; j++) {
@@ -15,10 +15,12 @@ const ColorPallete = () => {
     <div
       style={{
         background: color,
-        padding: 20,
-        width: "96%",
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 100,
+        padding: 'auto',
         margin: 10,
-        textAlign: "center",
         color: "#fff",
         fontFamily: "Montserrat",
         fontWeight: "bold",
