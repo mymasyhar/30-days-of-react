@@ -2,67 +2,60 @@ import { Component } from "react";
 
 import { CountriesData } from "./assets/countries";
 
-class Header extends Component{
+const imgStyles = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  padding: 10,
+}
+
+class Country extends Component {
   constructor(props){
     super(props)
   }
+  
+  state = {
+    index: Math.floor(Math.random() * this.props.country.length),
+  }
+  changeIndex = () => {
+    this.setState({
+      index: Math.floor(Math.random() * this.props.country.length)
+    })
+  }
+
   render(){
-    const {
-      title,
-      challenge,
-      author: {firstName, lastName},
-    } = this.props.data;
-    return(
-      <header>
-        <h1>{title}</h1>
-        <h2>{challenge}</h2>
-        <p>{firstName} {lastName}</p>
-      </header>
+    const index = this.state.index;
+    const currency = Object.entries(this.props.country[index].currencies[Object.keys(this.props.country[index].currencies)])[0][1];
+    return (
+      <section>
+        <div style={imgStyles}>
+          <img style={{width: 400, height: 275}} src={this.props.country[index].flags.svg}/>
+        </div>
+        <main>
+          <h2>{this.props.country[index].name.official}</h2>
+          <p>Capital : {this.props.country[index].capital}</p>
+          <p>population : {this.props.country[index].population}</p>
+          <p>Currency: {currency}</p>
+        </main>
+        <button onClick={this.changeIndex}>change country</button>
+      </section>
     )
   }
 }
 
-class Country extends Component{
-  
-  constructor(props){
-    super(props)
-  }
-  
-  render(){
-    const index = Math.floor(Math.random() * CountriesData.length);
-
-    return(
-      <section>
-        <article>
-          <div>
-            <img src={CountriesData[index].flags.svg} alt={CountriesData[index].name.official} />
-          </div>
-          <p>name : {CountriesData[index].name.official}</p>
-          <p>capital : {CountriesData[index].capital}</p>
-          <p>population : {CountriesData[index].population}</p>
-          <p>currencies : {Object.keys(CountriesData[index].currencies)}</p>
-        </article>
-        <button>change country</button>
-      </section> 
-    )
-  }
+const appStyles = {
+  fontFamily: 'montserrat',
+  margin: 20,
 }
 
 class App extends Component{
+  constructor(props){
+    super(props)
+  }
   render(){
-    const data = {
-      title: 'Country Explorer',
-      challenge: '30 Days of React',
-      author: {
-        firstName: 'Nico',
-        lastName: 'Robin'
-      }
-    }
     return(
-      <main>
-        <Header data={data}/>
-        <h1>Hallo!</h1>
-        <Country />
+      <main style={appStyles}>
+        <Country country={CountriesData}/>
       </main>
     )
   }
