@@ -54,7 +54,7 @@ const appStyles = {
 }
 const App = () => {
   const data = {
-    name: User.lastName,
+    name: `${User.firstName + ' ' + User.lastName}`,
     source: User.image,
     title: User.title,
     location: User.location,

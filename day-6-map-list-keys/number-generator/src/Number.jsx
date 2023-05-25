@@ -6,13 +6,11 @@ function generateNumber(num) {
   return numbers.reverse();
 }
 function primeChecker(num) {
-  let isPrime = false;
+  let isPrime = true;
   for (let i = 2; i < num; i++) {
     if (num % i === 0) {
       isPrime = false;
-      break;
     }
-    isPrime = true;
   }
   if (isPrime) {
     return "#E06469";
@@ -31,11 +29,12 @@ export default function Number(props) {
       style={{
         color: "#fff",
         fontSize: 20,
+        fontWeight: 'bold',
         display: "flex",
-        justifyContent: "center",
+        justifyContent: 'start',
         alignItems: "center",
-        gap: 10,
-        margin: "10%",
+        gap: 3,
+        margin: "0 20%",
         flexWrap: "wrap",
       }}
     >
